@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c8e2ca0ce43e4bbdb6d0804a859c88da" Name="Diagram1" ZoomLevel="77" >
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetRole" Width="1.5" PointX="16.375" PointY="7.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserClaim" Width="1.5" PointX="21.875" PointY="7.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserLogin" Width="1.5" PointX="21.375" PointY="11" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUser" Width="1.5" PointX="18.875" PointY="6.625" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Category" Width="1.5" PointX="3" PointY="18" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Company" Width="1.5" PointX="0.75" PointY="10.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Country" Width="1.5" PointX="16.125" PointY="10.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Deal" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="POSDatabaseModel.DealProduct" Width="1.5" PointX="5.25" PointY="11.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ErrorLog" Width="1.5" PointX="14.375" PointY="11.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Product" Width="1.5" PointX="3" PointY="12.625" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductCategory" Width="1.5" PointX="5.25" PointY="16.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductImage" Width="1.5" PointX="5.25" PointY="19.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductStock" Width="1.5" PointX="8.25" PointY="11.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Sale" Width="1.5" PointX="12.75" PointY="7" />
+        <EntityTypeShape EntityType="POSDatabaseModel.SaleProduct" Width="1.5" PointX="10.5" PointY="12" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Status" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Supplier" Width="1.5" PointX="6" PointY="6.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.TransactionLog" Width="1.5" PointX="14.375" PointY="8.625" />
+        <EntityTypeShape EntityType="POSDatabaseModel.User" Width="1.5" PointX="10.5" PointY="5.875" />
+        <AssociationConnector Association="POSDatabaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="POSDatabaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Category_Category" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Category_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ProductCategory_Category" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Deal_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Product_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ProductStock_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Sale_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Status_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_DealProduct_Deal" />
+        <AssociationConnector Association="POSDatabaseModel.FK_DealProduct_Product" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ProductCategory_Product" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ProductImage_Product" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ProductStock_Product" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ProductStock_Supplier" />
+        <AssociationConnector Association="POSDatabaseModel.FK_SaleProduct_ProductStock" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Sale_SaleProduct" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Sale_Status" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Sale_User" />
+        <AssociationConnector Association="POSDatabaseModel.FK_SaleProduct_Sale" />
+        <AssociationConnector Association="POSDatabaseModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
