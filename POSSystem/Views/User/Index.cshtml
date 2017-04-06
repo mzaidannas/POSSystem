@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "User Setup";
+}
+<script src="~/Angular/User/User.js"></script>
+<div ng-controller="UserController" id="DivUserManagement">
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="/User/UserForm" class="pull-right BtnGeneric"><i class="BtnGenericIcon"></i> Add User</a>
+        </div>
+    </div>
+    <div class="panel panel-flat border-top-xlg border-top-warning mt-10">
+        <div class="panel-body">
+            <form>
+                <div class="row">
+                    <div class="col-sm-2">
+                        Search
+                        <input type="text" ng-model="userSearch.Search" class="form-control" />
+                    </div>
+                    <div class="col-sm-2">
+                        Status
+                        <select ng-model="userSearch.Active" class="form-control">
+                            <option value="">All</option>
+                            <option value="1">Active</option>
+                            <option value="0">In-Active</option>
+                        </select>
+
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" ng-click="UserFetch()" class="BtnSearch mt-20">
+                            <i class="BtnSearchIcon"></i>
+                            <span class="ladda-label">Search</span>
+                            <span class="ladda-spinner"></span>
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="panel panel-flat">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer table-responsive">
+            <table id="UserTable" class="table datatable-show-all dataTable no-footer">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Serial Number</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+            </table>
+
+        </div>
+    </div>
+</div>
