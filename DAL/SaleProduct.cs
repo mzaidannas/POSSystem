@@ -14,12 +14,6 @@ namespace DAL
     
     public partial class SaleProduct
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SaleProduct()
-        {
-            this.Sales = new HashSet<Sale>();
-        }
-    
         public int Id { get; set; }
         public int Sale_Id { get; set; }
         public int ProductStock_Id { get; set; }
@@ -35,8 +29,6 @@ namespace DAL
         public Nullable<bool> IsActive { get; set; }
     
         public virtual ProductStock ProductStock { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
         public virtual Sale Sale { get; set; }
     }
 }

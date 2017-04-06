@@ -150,18 +150,10 @@
       <LastGenOutput>EntityModel.Context.cs</LastGenOutput>
       <DependentUpon>EntityModel.edmx</DependentUpon>
     </Content>
-    <Content Include="EntityModel.edmx.sql" />
     <Content Include="EntityModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EntityModel.edmx</DependentUpon>
       <LastGenOutput>EntityModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="POSDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="POSDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>POSDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
