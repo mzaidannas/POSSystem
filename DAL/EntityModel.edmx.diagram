@@ -5,28 +5,38 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c8e2ca0ce43e4bbdb6d0804a859c88da" Name="Diagram1" ZoomLevel="77" >
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" />
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Category" Width="1.5" PointX="3" PointY="11.875" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Company" Width="1.5" PointX="0.75" PointY="14" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Country" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Deal" Width="1.5" PointX="3" PointY="7.125" />
-        <EntityTypeShape EntityType="POSDatabaseModel.DealProduct" Width="1.5" PointX="5.25" PointY="13.125" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ErrorLog" Width="1.5" PointX="7.75" PointY="4.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Product" Width="1.5" PointX="3" PointY="16.625" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ProductCategory" Width="1.5" PointX="5.25" PointY="16.625" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ProductImage" Width="1.5" PointX="5.25" PointY="23.875" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ProductStock" Width="1.5" PointX="8.25" PointY="15.125" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Sale" Width="1.5" PointX="8.25" PointY="21.625" />
-        <EntityTypeShape EntityType="POSDatabaseModel.SaleProduct" Width="1.5" PointX="10.5" PointY="19.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Status" Width="1.5" PointX="3" PointY="22.125" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Supplier" Width="1.5" PointX="6" PointY="7.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.TransactionLog" Width="1.5" PointX="8.75" PointY="7.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.User" Width="1.5" PointX="6" PointY="27.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetRole" Width="1.5" PointX="3.75" PointY="40.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserClaim" Width="1.5" PointX="8.25" PointY="41.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserLogin" Width="1.5" PointX="8.25" PointY="39.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUser" Width="1.5" PointX="6" PointY="39.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Category" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Company" Width="1.5" PointX="0.75" PointY="15.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Country" Width="1.5" PointX="6" PointY="35.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Deal" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.DealProduct" Width="1.5" PointX="5.25" PointY="17.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Menu" Width="1.5" PointX="3.75" PointY="44.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.MenuAccessLevel" Width="1.5" PointX="6" PointY="44.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Module" Width="1.5" PointX="8.75" PointY="35.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ModuleAccessLevel" Width="1.5" PointX="11" PointY="40.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.News" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Notification" Width="1.5" PointX="10.5" PointY="27.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Product" Width="1.5" PointX="3" PointY="24.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductCategory" Width="1.5" PointX="5.25" PointY="21.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductImage" Width="1.5" PointX="5.25" PointY="32" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductStock" Width="1.5" PointX="8.25" PointY="19.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Sale" Width="1.5" PointX="5.25" PointY="24.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.SaleProduct" Width="1.5" PointX="10.5" PointY="23.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Status" Width="1.5" PointX="3" PointY="30.25" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Supplier" Width="1.5" PointX="6" PointY="12.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.TransactionLog" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.User" Width="1.5" PointX="8.25" PointY="26.5" />
+        <AssociationConnector Association="POSDatabaseModel.FK_MenuAccessLevel_AspNetRoles" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ModuleAccessLevel_AspNetRoles" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Notification_AspNetRoles" />
         <AssociationConnector Association="POSDatabaseModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="POSDatabaseModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="POSDatabaseModel.FK_User_AspNetUser" />
         <AssociationConnector Association="POSDatabaseModel.FK_Category_Category" />
         <AssociationConnector Association="POSDatabaseModel.FK_Category_Company" />
         <AssociationConnector Association="POSDatabaseModel.FK_ProductCategory_Category" />
@@ -35,8 +45,13 @@
         <AssociationConnector Association="POSDatabaseModel.FK_ProductStock_Company" />
         <AssociationConnector Association="POSDatabaseModel.FK_Sale_Company" />
         <AssociationConnector Association="POSDatabaseModel.FK_Status_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_User_Company" />
+        <AssociationConnector Association="POSDatabaseModel.FK_User_Country" />
         <AssociationConnector Association="POSDatabaseModel.FK_DealProduct_Deal" />
         <AssociationConnector Association="POSDatabaseModel.FK_DealProduct_Product" />
+        <AssociationConnector Association="POSDatabaseModel.FK_MenuAccessLevel_Menu" />
+        <AssociationConnector Association="POSDatabaseModel.FK_ModuleAccessLevel_Module" />
+        <AssociationConnector Association="POSDatabaseModel.FK_Notification_User" />
         <AssociationConnector Association="POSDatabaseModel.FK_ProductCategory_Product" />
         <AssociationConnector Association="POSDatabaseModel.FK_ProductImage_Product" />
         <AssociationConnector Association="POSDatabaseModel.FK_ProductStock_Product" />
@@ -45,6 +60,7 @@
         <AssociationConnector Association="POSDatabaseModel.FK_Sale_Status" />
         <AssociationConnector Association="POSDatabaseModel.FK_Sale_User" />
         <AssociationConnector Association="POSDatabaseModel.FK_SaleProduct_Sale" />
+        <AssociationConnector Association="POSDatabaseModel.FK_User_Status" />
         <AssociationConnector Association="POSDatabaseModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>

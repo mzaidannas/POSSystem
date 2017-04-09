@@ -12,29 +12,21 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Status
+    public partial class Module
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Status()
+        public Module()
         {
-            this.Sales = new HashSet<Sale>();
-            this.Users = new HashSet<User>();
+            this.ModuleAccessLevels = new HashSet<ModuleAccessLevel>();
         }
     
         public int Id { get; set; }
-        public int Company_Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
-        public string CreateBy { get; set; }
-        public System.DateTime CreateDate { get; set; }
-        public string UpdateBy { get; set; }
-        public Nullable<System.DateTime> UpdateDate { get; set; }
-        public bool IsActive { get; set; }
+        public string Detail { get; set; }
+        public string Controller { get; set; }
+        public string Action { get; set; }
     
-        public virtual Company Company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<ModuleAccessLevel> ModuleAccessLevels { get; set; }
     }
 }

@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using POSSystem.BLL;
+using DAL;
+using POSSystem.DataModels;
 
 namespace POSSystem.Controllers
 {
     [Authorize]
     public class UserController : Controller
     {
+        UserLogic userLogic = new UserLogic();
         public UserController()
         {
+
         }
 
         [Authorize]
@@ -18,6 +19,16 @@ namespace POSSystem.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public PartialViewResult _UserForm()
+        {
+            return PartialView();
+        }
+
+        public JsonResult FetchUser(DatatableRequest<string, User> paging)
+        {
+            return Json(userLogic.FetchUserList());
         }
     }
 }

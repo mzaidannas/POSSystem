@@ -20,5 +20,6 @@ namespace DAL
         public string Message { get; set; }
         public string Url { get; set; }
         public System.DateTime CreateDate { get; set; }
+        public Nullable<int> Company_Id { get; set; }
     }
 }

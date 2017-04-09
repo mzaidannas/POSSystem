@@ -12,15 +12,20 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class TransactionLog
+    public partial class News
     {
         public int Id { get; set; }
-        public int User_Id { get; set; }
-        public Nullable<int> RecordId { get; set; }
-        public string Action { get; set; }
-        public string TableName { get; set; }
+        public int Company_Id { get; set; }
+        public string Title { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
         public string Detail { get; set; }
+        public Nullable<int> SortOrder { get; set; }
+        public Nullable<bool> IsImportant { get; set; }
+        public bool IsActive { get; set; }
+        public int CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public Nullable<int> Company_Id { get; set; }
+        public Nullable<int> UpdateBy { get; set; }
+        public Nullable<System.DateTime> UpdateDate { get; set; }
     }
 }

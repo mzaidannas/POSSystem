@@ -35,6 +35,12 @@ namespace DAL
         public virtual DbSet<Deal> Deals { get; set; }
         public virtual DbSet<DealProduct> DealProducts { get; set; }
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<MenuAccessLevel> MenuAccessLevels { get; set; }
+        public virtual DbSet<Module> Modules { get; set; }
+        public virtual DbSet<ModuleAccessLevel> ModuleAccessLevels { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }

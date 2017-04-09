@@ -23,6 +23,7 @@ namespace DAL
             this.ProductStocks = new HashSet<ProductStock>();
             this.Sales = new HashSet<Sale>();
             this.Status = new HashSet<Status>();
+            this.Users = new HashSet<User>();
         }
     
         public int Id { get; set; }
@@ -50,5 +51,7 @@ namespace DAL
         public virtual ICollection<Sale> Sales { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Status> Status { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

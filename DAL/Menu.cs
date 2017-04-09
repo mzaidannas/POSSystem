@@ -12,29 +12,23 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Status
+    public partial class Menu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Status()
+        public Menu()
         {
-            this.Sales = new HashSet<Sale>();
-            this.Users = new HashSet<User>();
+            this.MenuAccessLevels = new HashSet<MenuAccessLevel>();
         }
     
         public int Id { get; set; }
-        public int Company_Id { get; set; }
+        public int ParentId { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
-        public string CreateBy { get; set; }
-        public System.DateTime CreateDate { get; set; }
-        public string UpdateBy { get; set; }
-        public Nullable<System.DateTime> UpdateDate { get; set; }
+        public string Url { get; set; }
+        public int SortOrder { get; set; }
+        public string IconClass { get; set; }
         public bool IsActive { get; set; }
     
-        public virtual Company Company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<MenuAccessLevel> MenuAccessLevels { get; set; }
     }
 }

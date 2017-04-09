@@ -12,15 +12,14 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class TransactionLog
+    public partial class MenuAccessLevel
     {
         public int Id { get; set; }
-        public int User_Id { get; set; }
-        public Nullable<int> RecordId { get; set; }
-        public string Action { get; set; }
-        public string TableName { get; set; }
-        public string Detail { get; set; }
-        public System.DateTime CreateDate { get; set; }
-        public Nullable<int> Company_Id { get; set; }
+        public int Company_Id { get; set; }
+        public string AspNetRoles_Id { get; set; }
+        public int Menu_Id { get; set; }
+    
+        public virtual AspNetRole AspNetRole { get; set; }
+        public virtual Menu Menu { get; set; }
     }
 }

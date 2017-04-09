@@ -204,6 +204,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Generic.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -305,6 +306,10 @@
     <Content Include="Content\lib\bootstrap\bootstrap.css.map" />
     <Content Include="Content\lib\bootstrap\bootstrap-theme.min.css.map" />
     <Content Include="Content\lib\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Scripts\Angular\Generic.js" />
+    <Content Include="Scripts\Angular\Method.js" />
+    <Content Include="Scripts\Angular\Services.js" />
+    <Content Include="Scripts\Angular\User\User.js" />
     <Content Include="Scripts\lib\angular\angular-animate.js" />
     <Content Include="Scripts\lib\angular\angular-animate.min.js" />
     <Content Include="Scripts\lib\angular\angular-aria.js" />
@@ -1128,6 +1133,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Scripts\lib\angular\version.json" />
+    <Content Include="Views\User\_UserForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1137,6 +1143,24 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\lib\jquery\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\lib\jquery\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{990197fe-f334-417d-86fe-ff4f09ea72ce}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{971CD65C-16D0-4E88-9177-2195F7DC766B}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataModels\DataModels.csproj">
+      <Project>{A8EDBC4E-2851-4D85-BA1A-6E6C93DAD331}</Project>
+      <Name>DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Security.csproj">
+      <Project>{075ab387-8aa9-4fe4-8c47-04a0f95f2931}</Project>
+      <Name>Security</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

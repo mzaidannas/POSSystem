@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "User Setup Form";
+}
+
+<!-- Angular File for User Setup-->
+<!-- <script src="~/Angular/User/UserForm.js"></script> -->
+
+<!-- 2 columns form in Bootstrap model -->
+<div id="UserModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="@Profiler.Popup">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Save Color</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <form name="UserForm" ng-submit="SubmitForm()">
+                    <fieldset class="text-semibold">
+                        <legend><i class="icon-reading position-left"></i> User details</legend>
+                    </fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <!-- Select User Type -->
+                            <div class="form-group">
+                                <label>User Type / Role <span style="color:red">*</span></label>
+
+                                <select ng-model="user.UserType_Id" class="form-control" required>
+                                    <option selected="selected" value="" disabled>Select User Type / Role </option>
+                                    <option ng-repeat="x in userTypes" value="{{x.Id}}">{{x.Name}}</option>
+                                </select>
+                            </div>
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label>First Name<span style="color:red">*</span></label>
+                                <input type="text" ng-model="user.FirstName" class="form-control" placeholder="Enter First Name" maxlength="50" required>
+                            </div>
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" ng-model="user.LastName" class="form-control" placeholder="Enter Last Name" maxlength="50">
+                            </div>
+                            <!-- Serial Number -->
+                            <div class="form-group">
+                                <label>Serial Number<span style="color:red">*</span></label>
+                                <input type="text" id="SerialNo" ng-model="user.SerialNumber" class="form-control" placeholder="Enter Serial Number" @*^[a-zA-Z0-9\s.\-]+$*@ title="Kindly enter hyphen(-) and minimum one digit after hyphen" pattern="^[a-z A-Z 0-9]+-[0-9]+$" maxlength="10" required>
+                            </div>
+                            <!-- Address -->
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea ng-model="user.Address" class="form-control" placeholder="Enter Address" maxlength="250"></textarea>
+                            </div>
+
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Phone Number -->
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" ng-model="user.Phone" class="form-control allow-number" placeholder="Enter Phone Number" maxlength="15">
+                                </div>
+                                <!-- CNIC -->
+                                <div class="form-group">
+                                    <label>CNIC</label>
+                                    <input type="text" id="cnic" ng-model="user.CNIC" class="form-control  allow-number" placeholder="Enter CNIC Number" maxlength="50">
+                                </div>
+                                <!-- City -->
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" ng-model="user.City" class="form-control" placeholder="Enter City" maxlength="50">
+                                </div>
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" ng-model="user.Email" class="form-control" placeholder="Enter Email" maxlength="150">
+                                </div>
+                                <!-- Status -->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>Active</label><br />
+                                            <input type="checkbox" ng-model="user.IsActive" name="action_checkbox" class="checkbox-inline mb-5 mr-10" value="Active">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="pull-left">
+                                                <label>Login Setup</label><br />
+                                                <input type="checkbox" ng-model="user.IsLoginSetup" name="action_checkbox" class="checkbox-inline mb-5 mr-10" ng-change="LoginSetup()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div id="LoginDiv" style="display:none;">
+                            <div class="panel-flat">
+
+                                <div class="panel-body">
+                                    <fieldset class="text-semibold">
+                                        <legend><i class="icon-reading position-left"></i> Enter Username and Password For Login Setup</legend>
+                                    </fieldset>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- User Name -->
+                                            <div class="form-group">
+                                                <label>User Name <span style="color:red">*</span></label>
+                                                <input type="text" ng-model="user.AspNetUsername" class="form-control" placeholder="Enter User Name" maxlength="128">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label id="Warning" style="color:red"></label>
+                                            </div>
+                                            <!-- Password -->
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Password <span style="color:red">*</span></label>
+                                                <input type="password" ng-model="user.AspNetPassword" class="form-control" placeholder="Enter Password" maxlength="128">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text-right">
+                        <button id="Save" name="Save" type="submit" class="@Profiler.BtnSave"><i class="@Profiler.BtnSaveIcon"></i> Save</button>
+                        <button id="SaveAndAdd" type="submit" class="@Profiler.BtnSave" ng-click="user.SaveAndAdd=true"><i class="@Profiler.BtnSaveIcon"></i> Save & Add New</button>
+                        <a class="@Profiler.BtnCancel" href="/User"><i class="@Profiler.BtnCancelIcon"></i> Close</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /2 columns form-->

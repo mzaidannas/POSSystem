@@ -14,6 +14,12 @@ namespace DAL
     
     public partial class Country
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Country()
+        {
+            this.Users = new HashSet<User>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Currency { get; set; }
@@ -25,5 +31,8 @@ namespace DAL
         public string UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public bool IsActive { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

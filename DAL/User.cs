@@ -17,11 +17,14 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+            this.Notifications = new HashSet<Notification>();
             this.Sales = new HashSet<Sale>();
         }
     
         public int Id { get; set; }
+        public string AspNetUser_Id { get; set; }
         public int Company_Id { get; set; }
+        public int Country_Id { get; set; }
         public int Status_Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -38,7 +41,13 @@ namespace DAL
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<bool> IsActive { get; set; }
     
+        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual Country Country { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Notification> Notifications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale> Sales { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

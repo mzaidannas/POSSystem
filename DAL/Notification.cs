@@ -12,15 +12,19 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class TransactionLog
+    public partial class Notification
     {
         public int Id { get; set; }
-        public int User_Id { get; set; }
-        public Nullable<int> RecordId { get; set; }
-        public string Action { get; set; }
-        public string TableName { get; set; }
+        public int Company_Id { get; set; }
+        public string AspNetRole_Id { get; set; }
+        public Nullable<int> User_Id { get; set; }
         public string Detail { get; set; }
+        public string Url { get; set; }
+        public bool IsRead { get; set; }
+        public bool IsAlertShow { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public Nullable<int> Company_Id { get; set; }
+    
+        public virtual AspNetRole AspNetRole { get; set; }
+        public virtual User User { get; set; }
     }
 }
