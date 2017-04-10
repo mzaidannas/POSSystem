@@ -10,19 +10,19 @@ namespace POSSystem.BLL
         {
         }
 
-        public DatatableResponse<User> SaveUser(User userProfile)
-        {
+        //public DatatableResponse<User> SaveUser(User userProfile)
+        //{
 
-        }
+        //}
 
-        public DatatableResponse<User> FetchUserList(User userProfile, DatatableRequest<string, User> paging)
-        {
+        //public DatatableResponse<User> FetchUserList(User userProfile, DatatableRequest<string, User> paging)
+        //{
 
-        }
+        //}
 
-        public DatatableResponse<User> FetchUserById(User userProfile, DatatableRequest<string, User> paging)
-        {
+        //public DatatableResponse<User> FetchUserById(User userProfile, DatatableRequest<string, User> paging)
+        //{
 
-        }
+        //}
     }
 }

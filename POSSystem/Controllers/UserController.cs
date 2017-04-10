@@ -26,9 +26,9 @@ namespace POSSystem.Controllers
             return PartialView();
         }
 
-        public JsonResult FetchUser(DatatableRequest<string, User> paging)
-        {
-            return Json(userLogic.FetchUserList());
-        }
+        //public JsonResult FetchUser(DatatableRequest<string, User> paging)
+        //{
+        //    return Json(userLogic.FetchUserList());
+        //}
     }
 }
