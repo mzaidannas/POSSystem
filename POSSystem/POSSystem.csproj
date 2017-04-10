@@ -773,6 +773,16 @@
     <Content Include="Content\lib\bootstrap\bootstrap.css.map" />
     <Content Include="Content\lib\bootstrap\bootstrap-theme.min.css.map" />
     <Content Include="Content\lib\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %281%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %2810%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %282%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %283%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %284%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %285%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %286%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %287%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %288%29.jpg" />
+    <Content Include="Images\HomeSlider\Prophet%27s Hardships %289%29.jpg" />
     <Content Include="Scripts\Angular\Generic.js" />
     <Content Include="Scripts\Angular\Method.js" />
     <Content Include="Scripts\Angular\Services.js" />

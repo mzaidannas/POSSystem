@@ -22,9 +22,9 @@ namespace POSSystem
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/lib/bootstrap/bootstrap.js",
                       "~/Scripts/lib/respond/respond.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/corejs").Include(
                       "~/assets/js/plugins/loaders/pace.min.js",
-                      "~/assets/js/core/libraries/jquery.min.js",
                       "~/assets/js/plugins/loaders/blockui.min.js",
                       "~/assets/js/plugins/ui/nicescroll.min.js",
                       "~/assets/js/plugins/ui/drilldown.js"));
