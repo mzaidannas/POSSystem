@@ -11,7 +11,6 @@ namespace POSSystem.Controllers
         UserLogic userLogic = new UserLogic();
         public UserController()
         {
-
         }
 
         [Authorize]
