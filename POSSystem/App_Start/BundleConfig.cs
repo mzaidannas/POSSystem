@@ -22,10 +22,24 @@ namespace POSSystem
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/lib/bootstrap/bootstrap.js",
                       "~/Scripts/lib/respond/respond.js"));
+            bundles.Add(new ScriptBundle("~/bundles/corejs").Include(
+                      "~/assets/js/plugins/loaders/pace.min.js",
+                      "~/assets/js/core/libraries/jquery.min.js",
+                      "~/assets/js/plugins/loaders/blockui.min.js",
+                      "~/assets/js/plugins/ui/nicescroll.min.js",
+                      "~/assets/js/plugins/ui/drilldown.js"));
+
+            
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       //"~/Content/lib/bootstrap/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/Customcss").Include(
+                      "~/assets/css/icons/icomoon/styles.css",
+                      "~/assets/css/minified/core.min.css",
+                      "~/assets/css/minified/components.min.css",
+                      "~/assets/css/minified/colors.min.css"));
+            
         }
     }
 }
