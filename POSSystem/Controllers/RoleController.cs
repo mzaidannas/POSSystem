@@ -5,6 +5,7 @@ using POSSystem.DataModels;
 using System;
 using System.Web.Mvc;
 using POSSystem.Utility;
+using System.Web;
 
 namespace POSSystem.Controllers
 {
@@ -18,8 +19,7 @@ namespace POSSystem.Controllers
             {
                 RoleManager<IdentityRole> roleManager = new RoleManager<IdentityRole>(
                                   new RoleStore<IdentityRole>(new POSDatabaseEntities()));
-                var roleresult = roleManager.Create( new IdentityRole(role.Name) ) ;
-
+                IdentityResult roleresult = roleManager.Create( new IdentityRole(role.Name) );
 
                 msg.Success = true;
                 msg.Action = "Save";
@@ -29,9 +29,9 @@ namespace POSSystem.Controllers
             catch (Exception ex)
             {
                 msg.Success = false;
-                msg.Action = "SaveRole";
+                msg.Action = "Save";
                 msg.MessageDetail = ex.Message;
-                userProfile.LogError(ex, "BLL/RoleLogic/SaveRole");
+                userProfile.LogError(ex, "BLL/RoleLogic/Save");
             }
 
             return msg;

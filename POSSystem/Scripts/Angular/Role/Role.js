@@ -98,7 +98,7 @@
     }
 
     $scope.role = {
-        Id: 0,
+        Id: "",
         Name: ""
     };
 
@@ -156,75 +156,16 @@
     }
 
     $scope.RoleSave = function () {
-        if ($scope.role.IsLoginSetup) {
-            if ($scope.role.RoleType_Id == "" || $scope.role.AspNetRolename == "" || $scope.role.AspNetPassword == "") {
-                InfoMessage("Please fill all fields in login setup form");
-                return;
-            }
-        }
         Post("/Role/Save", { role: $scope.role }).then(function (d) {
             if (d.Success)
-                RedirectDelay("/Role");
-
-            ShowMessage(d);
+                ShowMessage(d);
         });
-    }
-
-    //function for save and add new
-    $scope.RoleSaveAndAdd = function () {
-        if ($scope.role.IsLoginSetup) {
-            if ($scope.role.RoleType_Id == "" || $scope.role.AspNetRolename == "" || $scope.role.AspNetPassword == "") {
-                InfoMessage("Please fill all fields in login setup form");
-                return;
-            }
-        }
-        Post("/Role/Save", { role: $scope.role }).then(function (d) {
-            if (d.Success) {
-                $scope.RoleClearFields(); $scope.LoginSetup();
-            }
-
-            ShowMessage(d);
-        })
-
     }
 
     $scope.RoleClearFields = function () {
 
-        $scope.role.Id = 0;
-        $scope.role.FirstName = "";
-        $scope.role.LastName = "";
-        $scope.role.SerialNumber = "";
-        $scope.role.Email = "";
-        $scope.role.Phone = "";
-        $scope.role.CNIC = "";
-        $scope.role.Address = "";
-        $scope.role.City = "";
-        $scope.role.RoleType_Id = "";
-        $scope.role.IsActive = true;
-        $scope.role.AspNetRolename = "";
-        $scope.role.AspNetPassword = "";
-        $scope.role.AspNetRole_Id = "";
-        $scope.role.IsLoginSetup = false;
-        $scope.role.SaveAndAdd = false;
-
+        $scope.role.Id = "";
+        $scope.role.Name = "";
         $scope.$apply()
     }
-
-    $scope.LoginSetup = function () {
-
-        if ($scope.role.IsLoginSetup)
-            $('#LoginDiv').fadeIn(1000);
-
-        else
-            $('#LoginDiv').fadeOut(1000);
-
-    }
 });
-
-function RoleFetchById(recordId) {
-    angular.element(document.getElementById('DivRoleManagement')).scope().RoleFetchById(recordId);
-};
-
-function ShowRoleModal() {
-
-}
