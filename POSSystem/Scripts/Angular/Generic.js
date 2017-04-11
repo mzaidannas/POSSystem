@@ -1,50 +1,27 @@
 ﻿var app = angular.module('POSSystemModule', []);
 $(function () {
 
-    $('.pickadate-accessibility').pickadate({
-        labelMonthNext: 'Go to the next month',
-        labelMonthPrev: 'Go to the previous month',
-        labelMonthSelect: 'Pick a month from the dropdown',
-        labelYearSelect: 'Pick a year from the dropdown',
-        selectMonths: true,
-        selectYears: true,
-        format: 'dd/mm/yyyy'
-    });
-    $('.daterange-basic').daterangepicker({
-        applyClass: 'bg-slate-600',
-        cancelClass: 'btn-default',
-        locale: {
-            format: 'DD/MM/YYYY',
-        }
-    });
+    //$('.pickadate-accessibility').pickadate({
+    //    labelMonthNext: 'Go to the next month',
+    //    labelMonthPrev: 'Go to the previous month',
+    //    labelMonthSelect: 'Pick a month from the dropdown',
+    //    labelYearSelect: 'Pick a year from the dropdown',
+    //    selectMonths: true,
+    //    selectYears: true,
+    //    format: 'dd/mm/yyyy'
+    //});
+    //$('.daterange-basic').daterangepicker({
+    //    applyClass: 'bg-slate-600',
+    //    cancelClass: 'btn-default',
+    //    locale: {
+    //        format: 'DD/MM/YYYY',
+    //    }
+    //});
 
     $('.daterange-basic').val('');
 
     $('.daterange-basic').on('cancel.daterangepicker', function (ev, picker) {
         $(this).val('');
-    });
-    $('.product-auto-complete').autocomplete({
-        source: function (request, response) {
-            Post("/Generic/FetchProductsAutoComplete", { prefix: request.term }, false).then(function (d) {
-                response($.map(d.Data, function (item) {
-                    return {
-                        label: item.Name,
-                        val: item.Id
-                    }
-                }))
-            })
-        },
-        change: function (event, ui) {
-            if (ui.item == null || ui.item == undefined) {
-                $('#productAutoComplete').val("");
-
-            }
-        },
-        select: function (e, i) {
-            $('#productAutoComplete').val(i.item.val);
-
-        },
-        minLength: 1
     });
 
 })
@@ -212,16 +189,6 @@ function AccessDenied() {
         type: "error"
     });
 }
-function ChangePassword() {
-    var changePassword = {
-        OldPassword: $("#OldPassword").val(),
-        NewPassword: $("#NewPassword").val(),
-        ConfirmPassword: $("#ConfirmPassword").val()
-    };
-    Post("/Manage/ChangePassword", { model: changePassword }).then(function (d) {
-        ShowMessage(d)
-    })
-}
 function ConvertDecimal(value) {
     return parseFloat(value.toFixed(2));
 }
@@ -254,6 +221,5 @@ function StatusLabel(status) {
             break;
         default:
             return '<span class="label label-default">' + status + '</span>'
-
     }
 }

@@ -4,20 +4,16 @@
 
 <!-- Angular File for User Setup-->
 <!-- <script src="~/Angular/User/UserForm.js"></script> -->
-
 <!-- 2 columns form in Bootstrap model -->
 <div id="UserModal" class="modal fade" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="@Profiler.Popup">
+            <div class="modal-header bg-pink">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Save Color</h4>
+                <h4 class="modal-title">User Details</h4>
             </div>
             <div class="modal-body clearfix">
                 <form name="UserForm" ng-submit="SubmitForm()">
-                    <fieldset class="text-semibold">
-                        <legend><i class="icon-reading position-left"></i> User details</legend>
-                    </fieldset>
                     <div class="row">
                         <div class="col-md-6">
 
@@ -130,9 +126,9 @@
 
                     </div>
                     <div class="text-right">
-                        <button id="Save" name="Save" type="submit" class="@Profiler.BtnSave"><i class="@Profiler.BtnSaveIcon"></i> Save</button>
-                        <button id="SaveAndAdd" type="submit" class="@Profiler.BtnSave" ng-click="user.SaveAndAdd=true"><i class="@Profiler.BtnSaveIcon"></i> Save & Add New</button>
-                        <a class="@Profiler.BtnCancel" href="/User"><i class="@Profiler.BtnCancelIcon"></i> Close</a>
+                        <button id="Save" name="Save" type="submit" class="btn btn-success btn-sm"><i class="icon-box-add"></i> Save</button>
+                        <button id="SaveAndAdd" type="submit" class="btn btn-success btn-sm" ng-click="user.SaveAndAdd=true"><i class="icon-box-add"></i> Save & Add New</button>
+                        <a class="btn btn-default btn-sm" href="/User"><i class="icon-cross3"></i> Close</a>
                     </div>
                 </form>
             </div>

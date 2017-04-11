@@ -1,11 +1,11 @@
 ﻿@{
     ViewBag.Title = "User Setup";
 }
-<script src="~/Angular/User/User.js"></script>
+<script src="~/Scripts/Angular/User/User.js" type="text/javascript"></script>
 <div ng-controller="UserController" id="DivUserManagement">
     <div class="row">
         <div class="col-sm-12">
-            <a data-toggle="modal" ng-click="UserShowModal()" class="pull-right BtnGeneric"><i class="BtnGenericIcon"></i> Add User</a>
+            <a data-toggle="modal" onclick="ShowUserModal()" ng-click="UserShowModal()" class="pull-right btn btn-default btn-sm"><i class="BtnGenericIcon"></i> Add User</a>
         </div>
     </div>
     <div class="panel panel-flat border-top-xlg border-top-warning mt-10">
@@ -26,8 +26,8 @@
 
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" ng-click="UserFetch()" class="BtnSearch mt-20">
-                            <i class="BtnSearchIcon"></i>
+                        <button type="submit" ng-click="UserFetch()" class="btn bg-pink btn-sm mt-20">
+                            <i class="icon-search4"></i>
                             <span class="ladda-label">Search</span>
                             <span class="ladda-spinner"></span>
                         </button>
@@ -56,4 +56,5 @@
 
         </div>
     </div>
+    @Html.Partial("_UserForm")
 </div>

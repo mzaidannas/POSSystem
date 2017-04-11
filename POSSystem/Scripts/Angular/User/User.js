@@ -1,6 +1,4 @@
-﻿
-app.controller("UserController", function ($scope, $compile) {
-
+﻿app.controller("UserController", ['$scope', function ($scope) {
 
     $scope.userSearch = {
         Search: "",
@@ -37,7 +35,26 @@ app.controller("UserController", function ($scope, $compile) {
             "deferRender": true,
             "serverSide": true,
             "autoWidth": true,
-            "stateSave": true
+            "stateSave": true,
+            "columns": [
+                { "data": "FirstName" },
+                { "data": "LastName" },
+                { "data": "SerialNumber" },
+                { "data": "Email" },
+                {
+                    "data": "IsActive",
+                    "render": function (data, type, row) {
+                        return Label(row.IsActive);
+                    },
+                },
+                 {
+                     "width": "15%", orderable: false,
+                     "render": function (data, type, row) {
+                         return '<ul class="icons-list"><li class="dropdown">  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i>  </a>  <ul class="dropdown-menu dropdown-menu-right"><li><a onclick="UserFetchById(' + row.Id + ')"><i class="icon-database-edit2"></i> Edit</a></li>  </ul> </li></ul>';
+                     },
+                     "className": "text-center"
+                 },
+            ]
         });
         $('#UserTable').DataTable({
             "processing": false,
@@ -92,8 +109,6 @@ app.controller("UserController", function ($scope, $compile) {
                      },
                      "className": "text-center"
                  },
-
-
             ]
         });
     }
@@ -240,9 +255,13 @@ app.controller("UserController", function ($scope, $compile) {
             $('#LoginDiv').fadeOut(1000);
 
     }
-});
+}]);
 
 function UserFetchById(recordId) {
     angular.element(document.getElementById('DivUserManagement')).scope().UserFetchById(recordId);
 
-}
+};
+
+function ShowUserModal() {
+    $("#UserModal").modal('show');
+};

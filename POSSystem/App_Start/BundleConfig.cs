@@ -27,19 +27,25 @@ namespace POSSystem
                       "~/assets/js/plugins/loaders/pace.min.js",
                       "~/assets/js/plugins/loaders/blockui.min.js",
                       "~/assets/js/plugins/ui/nicescroll.min.js",
-                      "~/assets/js/plugins/ui/drilldown.js"));
+                      "~/assets/js/plugins/ui/drilldown.js",
+                      "~/assets/js/plugins/notifications/pnotify.min.js",
+                      "~/assets/js/core/app.js"));
 
-            
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                      "~/Scripts/lib/angular/angular.js",
+                      "~/Scripts/Angular/Generic.js",
+                      "~/Scripts/Angular/Method.js",
+                      "~/Scripts/Angular/Services.js"));
+
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      //"~/Content/lib/bootstrap/bootstrap.css",
-                      "~/Content/site.css"));
-            bundles.Add(new StyleBundle("~/Content/Customcss").Include(
+                      "~/Content/lib/bootstrap/bootstrap.css",
+                      "~/Content/lib/font-awesome/font-awesome.css",
                       "~/assets/css/icons/icomoon/styles.css",
                       "~/assets/css/minified/core.min.css",
                       "~/assets/css/minified/components.min.css",
-                      "~/assets/css/minified/colors.min.css"));
-            
+                      "~/assets/css/minified/colors.min.css",
+                      "~/Content/site.css"));
         }
     }
 }

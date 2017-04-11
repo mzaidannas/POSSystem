@@ -15,7 +15,7 @@ namespace POSSystem.BLL
 
         //}
 
-        //public DatatableResponse<User> FetchUserList(User userProfile, DatatableRequest<string, User> paging)
+        //public CallBackData<User> FetchUserList(User userProfile, DatatableRequest<string, User> paging)
         //{
 
         //}
