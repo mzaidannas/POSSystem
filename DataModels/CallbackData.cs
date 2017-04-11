@@ -7,6 +7,6 @@
     public class CallBackData<T>
     {
         public Message msg = new Message();
-        public DatatableResponse<T> tableData { get; set; }
+        public DatatableResponse<T> tableData = new DatatableResponse<T>();
     }
 }

@@ -1,11 +1,11 @@
 ﻿@{
-    ViewBag.Title = "User Setup";
+    ViewBag.Title = "Role Setup";
 }
-<script src="~/Scripts/Angular/User/User.js" type="text/javascript"></script>
-<div ng-controller="UserController" id="DivUserManagement">
+<script src="~/Scripts/Angular/Role/Role.js" type="text/javascript"></script>
+<div ng-controller="RoleController" id="DivRoleManagement">
     <div class="row">
         <div class="col-sm-12">
-            <a data-toggle="modal" ng-click="UserShowModal()" class="pull-right btn btn-default btn-sm"><i class="icon-add"></i> Add User</a>
+            <a data-toggle="modal" ng-click="RoleShowModal()" class="pull-right btn btn-default btn-sm"><i class="icon-add"></i> Add Role</a>
         </div>
     </div>
     <div class="panel panel-flat border-top-xlg border-top-warning mt-10">
@@ -14,11 +14,11 @@
                 <div class="row">
                     <div class="col-sm-2">
                         Search
-                        <input type="text" ng-model="userSearch.Search" class="form-control" />
+                        <input type="text" ng-model="roleSearch.Search" class="form-control" />
                     </div>
                     <div class="col-sm-2">
                         Status
-                        <select ng-model="userSearch.Active" class="form-control">
+                        <select ng-model="roleSearch.Active" class="form-control">
                             <option value="">All</option>
                             <option value="1">Active</option>
                             <option value="0">In-Active</option>
@@ -26,7 +26,7 @@
 
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" ng-click="UserFetch()" class="btn bg-pink btn-sm mt-20">
+                        <button type="submit" ng-click="RoleFetch()" class="btn bg-pink btn-sm mt-20">
                             <i class="icon-search4"></i>
                             <span class="ladda-label">Search</span>
                             <span class="ladda-spinner"></span>
@@ -40,7 +40,7 @@
     </div>
     <div class="panel panel-flat">
         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer table-responsive">
-            <table id="UserTable" class="table datatable-show-all dataTable no-footer">
+            <table id="RoleTable" class="table datatable-show-all dataTable no-footer">
                 <thead>
                     <tr>
                         <th>First Name</th>
@@ -56,5 +56,5 @@
 
         </div>
     </div>
-    @Html.Partial("_UserForm")
+    @Html.Partial("_RoleForm")
 </div>
