@@ -13,7 +13,7 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class POSDatabaseEntities : IdentityDbContext
+    public partial class POSDatabaseEntities : DbContext
     {
         public POSDatabaseEntities()
             : base("name=POSDatabaseEntities")
