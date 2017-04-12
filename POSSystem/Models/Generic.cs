@@ -14,63 +14,7 @@ namespace POSSystem.Models
 {
     public class Generic
     {
-        //public ReturnData<User> UserLoginSetup(User userProfile, UserType userType, User requestUser, RegisterViewModel registerViewModel, ApplicationUserManager userManager)
-        //{
-        //    ReturnData<User> returnData = new ReturnData<User>();
-
-        //    try
-        //    {
-        //        if (requestUser.IsLoginSetup)
-        //        {
-        //            string roleName = userType.AspNetRole.Name;
-
-        //            if (!String.IsNullOrEmpty(requestUser.AspNetUser_Id))
-        //            {
-        //                AspNetUser aspNetUser = db.AspNetUsers.FirstOrDefault(x => x.Id == requestUser.AspNetUser_Id);
-        //                aspNetUser.PasswordHash = (new PasswordHasher()).HashPassword(registerViewModel.Password);
-        //                db.SaveChanges();
-        //                userManager.RemoveFromRoles(aspNetUser.Id);
-        //                userManager.AddToRole(aspNetUser.Id, roleName);
-        //            }
-        //            else
-        //            {
-        //                var user = new ApplicationUser { UserName = registerViewModel.UserName, Email = registerViewModel.Email };
-        //                requestUser.AspNetUser_Id = user.Id;
-        //                var result = userManager.Create(user, registerViewModel.Password);
-        //                if (!result.Succeeded)
-        //                {
-        //                    returnData.msg.Success = false;
-        //                    returnData.msg.MessageDetail = result.Errors.ToArray()[0];
-        //                }
-        //                else
-        //                    userManager.AddToRole(user.Id, roleName);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (!String.IsNullOrEmpty(requestUser.AspNetUser_Id))
-        //            {
-        //                db.Users.FirstOrDefault(x => x.AspNetUser_Id == requestUser.AspNetUser_Id).AspNetUser_Id = null;
-        //                db.SaveChanges();
-        //                userManager.RemoveFromRoles(requestUser.AspNetUser_Id);
-        //                db.AspNetUsers.Remove(db.AspNetUsers.FirstOrDefault(x => x.Id == requestUser.AspNetUser_Id));
-        //                db.SaveChanges();
-        //                requestUser.AspNetUser_Id = null;
-
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        returnData.msg.Success = false;
-        //        returnData.msg.MessageDetail = Message.ErrorMessage;
-        //        userProfile.LogError(ex, "Models/Generic/UserLoginSetup");
-        //    }
-
-        //    returnData.Data = requestUser.AspNetUser_Id;
-        //    return returnData;
-
-        //}
+        
         public static void StoreModelToCookies<T>(ControllerContext context, string cookieName, T newModel) where T : class
         {
             var serializer = new JavaScriptSerializer();
