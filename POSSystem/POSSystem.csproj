@@ -199,6 +199,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -712,6 +713,7 @@
     <Content Include="Images\HomeSlider\Prophet%27s Hardships %289%29.jpg" />
     <Content Include="Scripts\Angular\Generic.js" />
     <Content Include="Scripts\Angular\Method.js" />
+    <Content Include="Scripts\Angular\Role\Role.js" />
     <Content Include="Scripts\Angular\Services.js" />
     <Content Include="Scripts\Angular\User\User.js" />
     <Content Include="Scripts\lib\angular\angular-animate.js" />
@@ -1545,6 +1547,8 @@
     <Content Include="Views\User\_UserForm.cshtml" />
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\_RoleForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1571,6 +1575,10 @@
     <ProjectReference Include="..\Security\Security.csproj">
       <Project>{075ab387-8aa9-4fe4-8c47-04a0f95f2931}</Project>
       <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{ec4296de-115e-4ad7-96d8-fe83f5696f5e}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

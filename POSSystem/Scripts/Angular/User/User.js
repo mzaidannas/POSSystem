@@ -1,4 +1,4 @@
-﻿app.controller("UserController", ['$scope', function ($scope) {
+﻿app.controller("UserController", function ($scope) {
 
     $scope.userSearch = {
         Search: "",
@@ -12,23 +12,18 @@
     }
 
     $scope.UserShowModal = function () {
-        $scope.UserClearFields();
         $("#UserModal").modal('show');
     }
 
     $scope.UserFetchById = function (recordId) {
         window.location.href = '/User/UserForm?isEdit=true&userId=' + recordId;
-
     }
 
-    $scope.UserFetch = function () {
-        UserBindGrid();
-    }
     function UserBindGrid() {
         //$("#UserTable").dataTable().fnDestroy();
         $("#UserTable").Datatable({
             "ajax": {
-                "url": "/User/",
+                "url": "/User/FetchUserList",
                 "type": "POST"
             },
             "deferRender": true,
@@ -38,8 +33,12 @@
             "columns": [
                 { "data": "FirstName" },
                 { "data": "LastName" },
-                { "data": "SerialNumber" },
-                { "data": "Email" },
+                { "data": "Address" },
+                { "data": "PhoneNumber" },
+                { "data": "CNIC" },
+                { "data": "City" },
+                { "data": "CreateBy" },
+                { "data": "CreateDate" },
                 {
                     "data": "IsActive",
                     "render": function (data, type, row) {
@@ -55,61 +54,61 @@
                  },
             ]
         });
-        $('#UserTable').DataTable({
-            "processing": false,
-            "bFilter": false,
-            "oLanguage": {
-                "sSearch": "",
-                "sSearchPlaceholder": "Search...",
-                "sLengthMenu": "_MENU_",
-                "oPaginate":
-               {
-                   "sNext": '→',
-                   "sLast": 'Last',
-                   "sFirst": 'First',
-                   "sPrevious": '←'
-               },
-            },
-            "initComplete": function (settings, json) {
-                $("[name=UserTable_length]").addClass("form-control");
-            },
-            "serverSide": true,
-            "ajaxSource": "/User/Fetch",
-            //fnServerData method used to inject the parameters into the AJAX call sent to the server-side
-            "fnServerData": function (sSource, aoData, fnCallback) {
-                BlockUI();
-                aoData.push({ "name": "SearchJson", "value": JSON.stringify($scope.userSearch) }); // Add some extra data to the sender
-                $.getJSON(sSource, aoData, function (d) {
-                    /* Do whatever additional processing you want on the callback, then tell DataTables */
-                    if (!d.msg.Success)
-                        ShowMessage(d.msg);
-                    else
-                        fnCallback(d.Data);
-                    UnBlockUI();
-                });
-            },
-            "bResetDisplay": false,
-            "aaSorting": [],
-            "columns": [
-                { "data": "FirstName" },
-                { "data": "LastName" },
-                { "data": "SerialNumber" },
-                { "data": "Email" },
-                {
-                    "data": "IsActive",
-                    "render": function (data, type, row) {
-                        return Label(row.IsActive);
-                    },
-                },
-                 {
-                     "width": "15%", orderable: false,
-                     "render": function (data, type, row) {
-                         return '<ul class="icons-list"><li class="dropdown">  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i>  </a>  <ul class="dropdown-menu dropdown-menu-right"><li><a onclick="UserFetchById(' + row.Id + ')"><i class="icon-database-edit2"></i> Edit</a></li>  </ul> </li></ul>';
-                     },
-                     "className": "text-center"
-                 },
-            ]
-        });
+        //$('#UserTable').DataTable({
+        //    "processing": false,
+        //    "bFilter": false,
+        //    "oLanguage": {
+        //        "sSearch": "",
+        //        "sSearchPlaceholder": "Search...",
+        //        "sLengthMenu": "_MENU_",
+        //        "oPaginate":
+        //       {
+        //           "sNext": '→',
+        //           "sLast": 'Last',
+        //           "sFirst": 'First',
+        //           "sPrevious": '←'
+        //       },
+        //    },
+        //    "initComplete": function (settings, json) {
+        //        $("[name=UserTable_length]").addClass("form-control");
+        //    },
+        //    "serverSide": true,
+        //    "ajaxSource": "/User/Fetch",
+        //    //fnServerData method used to inject the parameters into the AJAX call sent to the server-side
+        //    "fnServerData": function (sSource, aoData, fnCallback) {
+        //        BlockUI();
+        //        aoData.push({ "name": "SearchJson", "value": JSON.stringify($scope.userSearch) }); // Add some extra data to the sender
+        //        $.getJSON(sSource, aoData, function (d) {
+        //            /* Do whatever additional processing you want on the callback, then tell DataTables */
+        //            if (!d.msg.Success)
+        //                ShowMessage(d.msg);
+        //            else
+        //                fnCallback(d.Data);
+        //            UnBlockUI();
+        //        });
+        //    },
+        //    "bResetDisplay": false,
+        //    "aaSorting": [],
+        //    "columns": [
+        //        { "data": "FirstName" },
+        //        { "data": "LastName" },
+        //        { "data": "SerialNumber" },
+        //        { "data": "Email" },
+        //        {
+        //            "data": "IsActive",
+        //            "render": function (data, type, row) {
+        //                return Label(row.IsActive);
+        //            },
+        //        },
+        //         {
+        //             "width": "15%", orderable: false,
+        //             "render": function (data, type, row) {
+        //                 return '<ul class="icons-list"><li class="dropdown">  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i>  </a>  <ul class="dropdown-menu dropdown-menu-right"><li><a onclick="UserFetchById(' + row.Id + ')"><i class="icon-database-edit2"></i> Edit</a></li>  </ul> </li></ul>';
+        //             },
+        //             "className": "text-center"
+        //         },
+        //    ]
+        //});
     }
 
     $scope.user = {
@@ -186,9 +185,6 @@
     }
 
     $scope.UserSave = function () {
-
-
-        //var id = event.currentTarget.button.id;
         if ($scope.user.IsLoginSetup) {
             if ($scope.user.UserType_Id == "" || $scope.user.AspNetUsername == "" || $scope.user.AspNetPassword == "") {
                 InfoMessage("Please fill all fields in login setup form");
@@ -200,9 +196,7 @@
                 RedirectDelay("/User");
 
             ShowMessage(d);
-        })
-
-
+        });
     }
 
     //function for save and add new
@@ -254,13 +248,12 @@
             $('#LoginDiv').fadeOut(1000);
 
     }
-}]);
+});
 
 function UserFetchById(recordId) {
     angular.element(document.getElementById('DivUserManagement')).scope().UserFetchById(recordId);
-
 };
 
 function ShowUserModal() {
-    $("#UserModal").modal('show');
-};
+
+}

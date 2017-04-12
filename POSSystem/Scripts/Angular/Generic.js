@@ -1,4 +1,4 @@
-﻿var app = angular.module('POSSystemModule', []);
+﻿var app = angular.module('POSSystem', []);
 $(function () {
 
     //$('.pickadate-accessibility').pickadate({
