@@ -2,8 +2,7 @@
 
     $scope.userSearch = {
         Search: "",
-        Active: "",
-
+        Active: ""
     };
 
     PreBind();

@@ -9,11 +9,12 @@
 
 namespace DAL
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
-    public partial class POSDatabaseEntities : DbContext
+
+    public partial class POSDatabaseEntities : IdentityDbContext
     {
         public POSDatabaseEntities()
             : base("name=POSDatabaseEntities")
