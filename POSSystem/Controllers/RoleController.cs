@@ -5,7 +5,6 @@ using POSSystem.DataModels;
 using System;
 using System.Web.Mvc;
 using POSSystem.Utility;
-using System.Web;
 
 namespace POSSystem.Controllers
 {

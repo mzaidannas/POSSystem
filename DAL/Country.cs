@@ -25,11 +25,7 @@ namespace DAL
         public string Currency { get; set; }
         public string CurrencySymbol { get; set; }
         public string Code { get; set; }
-        public int TimeZoneHour { get; set; }
-        public string CreateBy { get; set; }
-        public System.DateTime CreateDate { get; set; }
-        public string UpdateBy { get; set; }
-        public Nullable<System.DateTime> UpdateDate { get; set; }
+        public Nullable<int> TimeZoneHour { get; set; }
         public bool IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

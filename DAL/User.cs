@@ -23,9 +23,9 @@ namespace DAL
     
         public int Id { get; set; }
         public string AspNetUser_Id { get; set; }
-        public int Company_Id { get; set; }
-        public int Country_Id { get; set; }
-        public int Status_Id { get; set; }
+        public Nullable<int> Company_Id { get; set; }
+        public Nullable<int> Country_Id { get; set; }
+        public Nullable<int> Status_Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -35,7 +35,7 @@ namespace DAL
         public string CNIC { get; set; }
         public string City { get; set; }
         public string Details { get; set; }
-        public string CreateBy { get; set; }
+        public int CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
         public string UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }

@@ -13,22 +13,31 @@
 
     $scope.UserShowModal = function () {
         $("#UserModal").modal('show');
-    }
-
-    $scope.UserFetchById = function (recordId) {
-        window.location.href = '/User/UserForm?isEdit=true&userId=' + recordId;
-    }
+    };
 
     function UserBindGrid() {
-        //$("#UserTable").dataTable().fnDestroy();
-        $("#UserTable").Datatable({
+        var userTable = $("#UserTable").DataTable({
             "ajax": {
                 "url": "/User/FetchUserList",
-                "type": "POST"
+                "contentType": "application/json",
+                "type": "POST",
+                "data": function (d) {
+                    return JSON.stringify({
+                        "data": $.extend({}, d, {
+                            "data": {
+                                "FirstName": "Zaid",
+                                "LastName": "Annas",
+                                "Address": "112-C PIA Society Johar Town Lahore"
+                            }
+                        })
+                    });
+                }
             },
             "deferRender": true,
+            "processing": true,
             "serverSide": true,
-            "autoWidth": true,
+            "select": true,
+            "autoWidth": false,
             "stateSave": true,
             "columns": [
                 { "data": "FirstName" },
@@ -43,7 +52,7 @@
                     "data": "IsActive",
                     "render": function (data, type, row) {
                         return Label(row.IsActive);
-                    },
+                    }
                 },
                  {
                      "width": "15%", orderable: false,
@@ -51,8 +60,12 @@
                          return '<ul class="icons-list"><li class="dropdown">  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i>  </a>  <ul class="dropdown-menu dropdown-menu-right"><li><a onclick="UserFetchById(' + row.Id + ')"><i class="icon-database-edit2"></i> Edit</a></li>  </ul> </li></ul>';
                      },
                      "className": "text-center"
-                 },
+                 }
             ]
+        });
+        userTable.on('select', function (event, dataTable, type, indexes) {
+            let row = dataTable.rows(indexes[0]).data()['0'];
+            this.rowSelected.emit({ row });
         });
         //$('#UserTable').DataTable({
         //    "processing": false,
@@ -131,19 +144,19 @@
         SaveAndAdd: false
     };
 
-    function PreBind() {
-        Get("/User/FetchUserTypes").then(function (d) {
-            if (d.msg.Success) {
-                $scope.userTypes = d.Data.userRolesLogin;//d.Data.userTypes;
-                // $scope.userTypesForLogin = d.Data.userRolesLogin;
-                $scope.$apply();
-            }
-            else
-                ShowMessage(d);
-        })
+    //function PreBind() {
+    //    Get("/User/FetchUserTypes").then(function (d) {
+    //        if (d.msg.Success) {
+    //            $scope.userTypes = d.Data.userRolesLogin;//d.Data.userTypes;
+    //            // $scope.userTypesForLogin = d.Data.userRolesLogin;
+    //            $scope.$apply();
+    //        }
+    //        else
+    //            ShowMessage(d);
+    //    })
 
-        BindForm();
-    }
+    //    BindForm();
+    //}
 
 
     //function BindForm() Check the call for edit
@@ -172,7 +185,7 @@
                     $scope.$apply();
                     $scope.LoginSetup();
                 }
-            })
+            });
 
         }
     }
@@ -181,8 +194,8 @@
             $scope.UserSaveAndAdd();
 
         else
-            $scope.UserSave()
-    }
+            $scope.UserSave();
+    };
 
     $scope.UserSave = function () {
         if ($scope.user.IsLoginSetup) {
@@ -197,7 +210,7 @@
 
             ShowMessage(d);
         });
-    }
+    };
 
     //function for save and add new
     $scope.UserSaveAndAdd = function () {
@@ -213,9 +226,8 @@
             }
 
             ShowMessage(d);
-        })
-
-    }
+        });
+    };
 
     $scope.UserClearFields = function () {
 
@@ -236,8 +248,8 @@
         $scope.user.IsLoginSetup = false;
         $scope.user.SaveAndAdd = false;
 
-        $scope.$apply()
-    }
+        $scope.$apply();
+    };
 
     $scope.LoginSetup = function () {
 
@@ -246,14 +258,5 @@
 
         else
             $('#LoginDiv').fadeOut(1000);
-
-    }
+    };
 });
-
-function UserFetchById(recordId) {
-    angular.element(document.getElementById('DivUserManagement')).scope().UserFetchById(recordId);
-};
-
-function ShowUserModal() {
-
-}

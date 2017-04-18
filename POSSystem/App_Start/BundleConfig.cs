@@ -24,6 +24,9 @@ namespace POSSystem
                       "~/Scripts/lib/respond/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/corejs").Include(
+                      "~/Scripts/lib/datatables/jquery.dataTables.js",
+                      "~/Scripts/lib/datatables/dataTables.bootstrap.js",
+                      "~/Scripts/lib/select/dataTables.select.js",
                       "~/assets/js/plugins/loaders/pace.min.js",
                       "~/assets/js/plugins/loaders/blockui.min.js",
                       "~/assets/js/plugins/ui/nicescroll.min.js",
@@ -40,6 +43,8 @@ namespace POSSystem
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/lib/bootstrap/bootstrap.css",
+                      "~/Content/lib/datatables/dataTables.bootstrap.css",
+                      "~/Content/lib/select/select.bootstrap.css",
                       "~/Content/lib/font-awesome/font-awesome.css",
                       "~/assets/css/icons/icomoon/styles.css",
                       "~/assets/css/minified/core.min.css",

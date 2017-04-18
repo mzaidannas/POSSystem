@@ -13,11 +13,11 @@ namespace POSSystem.DataModels
     public class DatatableRequest<T>
     {
         public int draw;
-        public List<DatatableColumn> columns;
-        public List<DatatableOrder> order;
+        public List<DatatableColumn> columns = new List<DatatableColumn>();
+        public List<DatatableOrder> order = new List<DatatableOrder>();
         public int start;
         public int length;
-        public DatatableSearch search;
+        public DatatableSearch search = new DatatableSearch();
         public T data;
     }
 
@@ -31,7 +31,7 @@ namespace POSSystem.DataModels
         public string name;
         public bool searchable;
         public bool orderable;
-        public DatatableSearch search;
+        public DatatableSearch search = new DatatableSearch();
 
     }
     /// <summary>

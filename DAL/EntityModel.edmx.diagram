@@ -5,32 +5,32 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c8e2ca0ce43e4bbdb6d0804a859c88da" Name="Diagram1" ZoomLevel="77" >
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetRole" Width="1.5" PointX="3.75" PointY="40.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserClaim" Width="1.5" PointX="8.25" PointY="41.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserLogin" Width="1.5" PointX="8.25" PointY="39.25" />
-        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUser" Width="1.5" PointX="6" PointY="39.5" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Category" Width="1.5" PointX="3" PointY="13.25" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Company" Width="1.5" PointX="0.75" PointY="15.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Country" Width="1.5" PointX="6" PointY="35.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Deal" Width="1.5" PointX="3" PointY="8.5" />
-        <EntityTypeShape EntityType="POSDatabaseModel.DealProduct" Width="1.5" PointX="5.25" PointY="17.875" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Menu" Width="1.5" PointX="3.75" PointY="44.25" />
-        <EntityTypeShape EntityType="POSDatabaseModel.MenuAccessLevel" Width="1.5" PointX="6" PointY="44.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Module" Width="1.5" PointX="8.75" PointY="35.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ModuleAccessLevel" Width="1.5" PointX="11" PointY="40.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.News" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Notification" Width="1.5" PointX="10.5" PointY="27.875" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Product" Width="1.5" PointX="3" PointY="24.875" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ProductCategory" Width="1.5" PointX="5.25" PointY="21.375" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ProductImage" Width="1.5" PointX="5.25" PointY="32" />
-        <EntityTypeShape EntityType="POSDatabaseModel.ProductStock" Width="1.5" PointX="8.25" PointY="19.875" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Sale" Width="1.5" PointX="5.25" PointY="24.5" />
-        <EntityTypeShape EntityType="POSDatabaseModel.SaleProduct" Width="1.5" PointX="10.5" PointY="23.25" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Status" Width="1.5" PointX="3" PointY="30.25" />
-        <EntityTypeShape EntityType="POSDatabaseModel.Supplier" Width="1.5" PointX="6" PointY="12.5" />
-        <EntityTypeShape EntityType="POSDatabaseModel.TransactionLog" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="POSDatabaseModel.User" Width="1.5" PointX="8.25" PointY="26.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetRole" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="7.125" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="4.625" />
+        <EntityTypeShape EntityType="POSDatabaseModel.AspNetUser" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Category" Width="1.5" PointX="3" PointY="26" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Company" Width="1.5" PointX="0.75" PointY="16.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Country" Width="1.5" PointX="3" PointY="16.625" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Deal" Width="1.5" PointX="3" PointY="30.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.DealProduct" Width="1.5" PointX="5.25" PointY="28.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ErrorLog" Width="1.5" PointX="7.75" PointY="2" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Menu" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="POSDatabaseModel.MenuAccessLevel" Width="1.5" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Module" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ModuleAccessLevel" Width="1.5" PointX="8" PointY="5.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.News" Width="1.5" PointX="9.75" PointY="9" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Notification" Width="1.5" PointX="10.5" PointY="13.875" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Product" Width="1.5" PointX="3" PointY="20.625" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductCategory" Width="1.5" PointX="5.25" PointY="25.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductImage" Width="1.5" PointX="5.25" PointY="22" />
+        <EntityTypeShape EntityType="POSDatabaseModel.ProductStock" Width="1.5" PointX="8.25" PointY="19.375" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Sale" Width="1.5" PointX="7.5" PointY="12.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.SaleProduct" Width="1.5" PointX="10.5" PointY="18.5" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Status" Width="1.5" PointX="3" PointY="9.75" />
+        <EntityTypeShape EntityType="POSDatabaseModel.Supplier" Width="1.5" PointX="6" PointY="32" />
+        <EntityTypeShape EntityType="POSDatabaseModel.TransactionLog" Width="1.5" PointX="9.75" PointY="2" />
+        <EntityTypeShape EntityType="POSDatabaseModel.User" Width="1.5" PointX="5.25" PointY="12.625" />
         <AssociationConnector Association="POSDatabaseModel.FK_MenuAccessLevel_AspNetRoles" />
         <AssociationConnector Association="POSDatabaseModel.FK_ModuleAccessLevel_AspNetRoles" />
         <AssociationConnector Association="POSDatabaseModel.FK_Notification_AspNetRoles" />

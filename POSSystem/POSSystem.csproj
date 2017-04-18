@@ -212,12 +212,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\css\css\icons\glyphicons\glyphicons-halflings-regular-2.html" />
-    <Content Include="assets\css\css\icons\glyphicons\glyphicons-halflings-regular-3.html" />
-    <Content Include="assets\css\css\icons\glyphicons\glyphicons-halflings-regular-4.html" />
-    <Content Include="assets\css\css\icons\glyphicons\glyphicons-halflings-regular-5.html" />
-    <Content Include="assets\css\css\icons\glyphicons\glyphicons-halflings-regular.html" />
-    <Content Include="assets\css\css\icons\glyphicons\glyphicons-halflings-regulard41d.html" />
     <Content Include="assets\css\extras\animate.min.css" />
     <Content Include="assets\css\icons\fontawesome\fonts\fontawesome-webfonte0a5-2.html" />
     <Content Include="assets\css\icons\fontawesome\fonts\fontawesome-webfonte0a5.html" />
@@ -226,7 +220,6 @@
     <Content Include="assets\css\icons\icomoon\fonts\icomoone627.html" />
     <Content Include="assets\css\icons\icomoon\fonts\icomoone627.svg" />
     <Content Include="assets\css\icons\icomoon\styles.css" />
-    <Content Include="assets\css\minified\bootstrap.min.css" />
     <Content Include="assets\css\minified\colors.min.css" />
     <Content Include="assets\css\minified\components.min.css" />
     <Content Include="assets\css\minified\core.min.css" />
@@ -664,8 +657,27 @@
     <Content Include="Content\lib\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\lib\bootstrap\bootstrap.css" />
     <Content Include="Content\lib\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\lib\datatables\dataTables.bootstrap.css" />
+    <Content Include="Content\lib\datatables\dataTables.bootstrap.min.css" />
+    <Content Include="Content\lib\datatables\dataTables.foundation.css" />
+    <Content Include="Content\lib\datatables\dataTables.foundation.min.css" />
+    <Content Include="Content\lib\datatables\dataTables.jqueryui.css" />
+    <Content Include="Content\lib\datatables\dataTables.jqueryui.min.css" />
+    <Content Include="Content\lib\datatables\dataTables.semanticui.css" />
+    <Content Include="Content\lib\datatables\dataTables.semanticui.min.css" />
+    <Content Include="Content\lib\datatables\jquery.dataTables.css" />
+    <Content Include="Content\lib\datatables\jquery.dataTables.min.css" />
+    <Content Include="Content\lib\datatables\jquery.dataTables_themeroller.css" />
     <Content Include="Content\lib\font-awesome\font-awesome.css" />
     <Content Include="Content\lib\font-awesome\font-awesome.min.css" />
+    <Content Include="Content\lib\select\select.bootstrap.css" />
+    <Content Include="Content\lib\select\select.bootstrap.min.css" />
+    <Content Include="Content\lib\select\select.dataTables.css" />
+    <Content Include="Content\lib\select\select.dataTables.min.css" />
+    <Content Include="Content\lib\select\select.foundation.css" />
+    <Content Include="Content\lib\select\select.foundation.min.css" />
+    <Content Include="Content\lib\select\select.jqueryui.css" />
+    <Content Include="Content\lib\select\select.jqueryui.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\font-awesome\fontawesome-webfont.svg" />
@@ -701,6 +713,11 @@
     <Content Include="Content\lib\bootstrap\bootstrap.css.map" />
     <Content Include="Content\lib\bootstrap\bootstrap-theme.min.css.map" />
     <Content Include="Content\lib\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Images\datatables\sort_asc.png" />
+    <Content Include="Images\datatables\sort_asc_disabled.png" />
+    <Content Include="Images\datatables\sort_both.png" />
+    <Content Include="Images\datatables\sort_desc.png" />
+    <Content Include="Images\datatables\sort_desc_disabled.png" />
     <Content Include="Images\HomeSlider\Prophet%27s Hardships %281%29.jpg" />
     <Content Include="Images\HomeSlider\Prophet%27s Hardships %2810%29.jpg" />
     <Content Include="Images\HomeSlider\Prophet%27s Hardships %282%29.jpg" />
@@ -1493,6 +1510,16 @@
     <Content Include="Scripts\lib\angular\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\lib\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\lib\angular\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.foundation.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.semanticui.js" />
+    <Content Include="Scripts\lib\datatables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\lib\datatables\jquery.dataTables.js" />
+    <Content Include="Scripts\lib\datatables\jquery.dataTables.min.js" />
     <Content Include="Scripts\lib\jquery\jquery-3.1.1.js" />
     <Content Include="Scripts\lib\jquery\jquery-3.1.1.min.js" />
     <Content Include="Scripts\lib\jquery\jquery-3.1.1.slim.js" />
@@ -1507,6 +1534,8 @@
     <Content Include="Scripts\lib\respond\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\lib\respond\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\lib\respond\respond.min.js" />
+    <Content Include="Scripts\lib\select\dataTables.select.js" />
+    <Content Include="Scripts\lib\select\dataTables.select.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

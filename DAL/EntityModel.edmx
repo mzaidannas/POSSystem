@@ -96,14 +96,10 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
-          <Property Name="CurrencySymbol" Type="nvarchar" MaxLength="1" />
-          <Property Name="Code" Type="nvarchar" MaxLength="15" />
-          <Property Name="TimeZoneHour" Type="int" Nullable="false" />
-          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CreateDate" Type="datetime" Nullable="false" />
-          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
-          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CurrencySymbol" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="TimeZoneHour" Type="int" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Deal">
@@ -209,7 +205,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Company_Id" Type="int" Nullable="false" />
+          <Property Name="Company_Id" Type="int" />
           <Property Name="AspNetRole_Id" Type="nvarchar" MaxLength="128" />
           <Property Name="User_Id" Type="int" />
           <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
@@ -372,9 +368,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AspNetUser_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="Company_Id" Type="int" Nullable="false" />
-          <Property Name="Country_Id" Type="int" Nullable="false" />
-          <Property Name="Status_Id" Type="int" Nullable="false" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="Country_Id" Type="int" />
+          <Property Name="Status_Id" Type="int" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -384,7 +380,7 @@
           <Property Name="CNIC" Type="nvarchar" MaxLength="20" />
           <Property Name="City" Type="nvarchar" MaxLength="50" />
           <Property Name="Details" Type="nvarchar" MaxLength="500" />
-          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
           <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
           <Property Name="UpdateDate" Type="datetime" />
@@ -747,7 +743,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Company">
-          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Company">
@@ -759,7 +755,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Country">
-          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Country">
@@ -771,7 +767,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -1199,14 +1195,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CurrencySymbol" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="Code" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="TimeZoneHour" Type="Int32" Nullable="false" />
-          <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencySymbol" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TimeZoneHour" Type="Int32" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="POSDatabaseModel.FK_User_Country" FromRole="Country" ToRole="User" />
         </EntityType>
@@ -1323,7 +1315,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Company_Id" Type="Int32" Nullable="false" />
+          <Property Name="Company_Id" Type="Int32" />
           <Property Name="AspNetRole_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="User_Id" Type="Int32" />
           <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -1510,9 +1502,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AspNetUser_Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="Company_Id" Type="Int32" Nullable="false" />
-          <Property Name="Country_Id" Type="Int32" Nullable="false" />
-          <Property Name="Status_Id" Type="Int32" Nullable="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="Country_Id" Type="Int32" />
+          <Property Name="Status_Id" Type="Int32" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1522,7 +1514,7 @@
           <Property Name="CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Details" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="Int32" Nullable="false" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
@@ -1707,7 +1699,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Company">
-          <End Type="POSDatabaseModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="POSDatabaseModel.Company" Role="Company" Multiplicity="0..1" />
           <End Type="POSDatabaseModel.User" Role="User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Company">
@@ -1719,7 +1711,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Country">
-          <End Type="POSDatabaseModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="POSDatabaseModel.Country" Role="Country" Multiplicity="0..1" />
           <End Type="POSDatabaseModel.User" Role="User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Country">
@@ -1887,7 +1879,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Status">
-          <End Type="POSDatabaseModel.Status" Role="Status" Multiplicity="1" />
+          <End Type="POSDatabaseModel.Status" Role="Status" Multiplicity="0..1" />
           <End Type="POSDatabaseModel.User" Role="User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -1993,10 +1985,6 @@
             <EntityTypeMapping TypeName="POSDatabaseModel.Country">
               <MappingFragment StoreEntitySet="Country">
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
                 <ScalarProperty Name="TimeZoneHour" ColumnName="TimeZoneHour" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="CurrencySymbol" ColumnName="CurrencySymbol" />

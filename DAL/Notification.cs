@@ -15,7 +15,7 @@ namespace DAL
     public partial class Notification
     {
         public int Id { get; set; }
-        public int Company_Id { get; set; }
+        public Nullable<int> Company_Id { get; set; }
         public string AspNetRole_Id { get; set; }
         public Nullable<int> User_Id { get; set; }
         public string Detail { get; set; }
